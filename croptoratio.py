@@ -1,7 +1,4 @@
 import tkinter as tk
-from tkinter import filedialog
-from PIL import Image, ImageTk
-import tkinter as tk
 from tkinter import ttk
 from tkinter.filedialog import askopenfilename
 
@@ -18,6 +15,7 @@ root.title(APPLICATION_NAME)
 
 var_filename = tk.StringVar()
 persistient_images = []
+
 
 def button_callback(*args):
     def display_in_canvas(canvas, image):
@@ -43,9 +41,10 @@ def button_callback(*args):
     var_filename.set(file_name)
     old = load_image(file_name)
     new = crop_image(old)
-    new.save("cropped.jpeg");
+    new.save("cropped.jpeg")
     display_in_canvas(canvas_old, old)
     display_in_canvas(canvas_new, new)
+
 
 frame0 = ttk.Frame(root)
 frame1 = ttk.Frame(frame0)
